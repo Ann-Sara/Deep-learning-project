@@ -1,0 +1,149 @@
+
+
+<!--
+   Author: W3layouts
+   Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Phishing Email Detection</title>
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="static/assets/css/style-starter.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body id="home">
+<section class=" w3l-header-4 header-sticky">
+    <header class="absolute-top">
+        <div class="container-fluid pr-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <h2><img src="static/assets/images/01.png" style="height:40px" /><font color="red">PHISHING</font> <font color="green">EMAIL</font> <font color="blue">DETECTION</font></a></h2>
+            <button class="navbar-toggler bg-gradient collapsed" type="button" data-toggle="collapse"
+                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="fa icon-expand fa-bars"></span>
+				<span class="fa icon-close fa-times"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/userhome">{{data.1}}'s Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="/mail">My Mail</a>
+              </li>      
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>                   
+                </ul>
+            </div>
+        </div>
+        <img src="static/assets/images/2.jpg" style="width:100%; height:350px; border-bottom:1px solid black;" />
+        </nav>
+    </div>
+      </header>
+</section>
+
+<script src="assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+<!--bootstrap working-->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- //bootstrap working-->
+<!-- disable body scroll which navbar is in active -->
+<script>
+$(function () {
+  $('.navbar-toggler').click(function () {
+    $('body').toggleClass('noscroll');
+  })
+});
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+
+<section class="">
+    <div class="specification-layout editContent">
+        <div class="container">
+            <div class="main-titles-head "><br />
+                <h3 class="header-name editContent">
+					User Login
+                </h3>
+                <p class="tiltle-para editContent ">
+                  
+                </p>
+            </div>
+            
+                    
+        </div>
+</section>
+<div class="container">
+<div class="row">
+  <div class="col-lg-12">
+    <a href="/updatemail">UPDATE MY MAIL</a>
+    {%if mail%}
+      <table class="table table-responsive table-bordered">
+        <tr>
+          <td>#</td>
+          <td>Sender</td>
+          <td>Subject</td> 
+          <td></td>         
+        </tr>
+        {%for m in mail%}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{m.2}}</td>
+            <td>{{m.3}}</td>
+            <td style="width:15%"><a href="/chkphish?mid={{m.0}}" style="color:white; background-color:red; padding:3px;">Check for Phishing</a></td>
+          </tr>
+        {%endfor%}
+      </table>
+    {%endif%}
+  </div>
+            
+</div>
+</div>
+
+
+
+
+<br />
+  <section class="w3l-footer-29-main w3l-copyright">
+	<div class="container">
+	  <div class=" bottom-copies text-center">
+		<p class="copy-footer-29">© 2020 Easy cash. All rights reserved | Designed by <a href="static/https://w3layouts.com">W3layouts</a></p>
+	  </div>
+	</div>
+  </section>
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+	<span class="fa fa-long-arrow-up"></span>
+</button>
+<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function () {
+		scrollFunction()
+	};
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			document.getElementById("movetop").style.display = "block";
+		} else {
+			document.getElementById("movetop").style.display = "none";
+		}
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
+</script>
+<!-- /move top -->
+</body>
+
+</html>
